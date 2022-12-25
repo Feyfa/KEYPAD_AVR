@@ -12,15 +12,15 @@
 
 int main(void)
 {
-	uint8_t rowPin[4] = {0,1,2,3};
-	uint8_t columnPin[4] = {4,5,6,7};
-	char keyMap[4][4] = 
+	uint8_t rowPin[4] = {0,1,2,3};//pins for rows
+	uint8_t columnPin[4] = {4,5,6,7};//pins for columns
+	char keyMap[4][4] =
 	{
 		{'7','8','9','/'},
 		{'4','5','6','*'},
 		{'1','2','3','-'},
 		{'C','0','=','+'}
-	};
+	};//map on the keypad
 	keypad4x4 keypad = keypad4x4(keypadUsingPD,rowPin,columnPin,keyMap);
 	lm016l lcd = lm016l(lcdUsingPB);
 	lcd.location(0,0);
